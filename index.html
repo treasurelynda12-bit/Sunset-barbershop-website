@@ -3,17 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunset All Stars | Premium Brooklyn Barber Shop</title>
-    <!-- Modern Typography -->
+    
+    <!-- SEO / SEARCH ENGINE OPTIMIZATION -->
+    <title>Sunset All Stars | Premium Brooklyn Barber Shop & Grooming</title>
+    <meta name="description" content="Book your 5-star haircut at Sunset All Stars in Brooklyn. Precision fades, beard architecture, and premium grooming at 369 50th St.">
+    <meta name="keywords" content="Barber Shop Brooklyn, Best Fade Brooklyn, Sunset All Stars, Men's Grooming NYC, Haircut 11220">
+    <meta name="author" content="Sunset All Stars">
+    
+    <!-- SOCIAL MEDIA PREVIEW (Open Graph) -->
+    <meta property="og:title" content="Sunset All Stars | Premium Brooklyn Grooming">
+    <meta property="og:description" content="Experience the gold standard of barbering. Book your chair online.">
+    <meta property="og:image" content="https://i.postimg.cc/qRT1pFgQ/hero.png">
+    <meta property="og:url" content="https://sunset-barbershop-website.vercel.app">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- GOOGLE BUSINESS SCHEMA (WORTH $100) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BarberShop",
+      "name": "Sunset All Stars Barber Shop",
+      "image": "https://i.postimg.cc/qRT1pFgQ/hero.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "369 50th St",
+        "addressLocality": "Brooklyn",
+        "addressRegion": "NY",
+        "postalCode": "11220",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.6370,
+        "longitude": -74.0206
+      },
+      "url": "https://sunset-barbershop-website.vercel.app",
+      "telephone": "+13474995257",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "09:00",
+          "closes": "21:00"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Professional Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
         :root { 
             --primary: #ff8c00; 
             --accent: #ffd700;  
-            --bg: #1e1e1e;      /* Modern Charcoal Gray - Lightened up */
+            --bg: #1e1e1e;      
             --card: #2a2a2a;    
             --text: #ffffff;
             --muted: #bbbbbb;
@@ -22,7 +68,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; }
         body { background-color: var(--bg); color: var(--text); font-family: 'Montserrat', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
         
-        /* Navigation & Hamburger Menu */
+        /* Navigation */
         header { 
             position: fixed; width: 100%; padding: 15px 5%; z-index: 2000; 
             background: rgba(30, 30, 30, 0.98); backdrop-filter: blur(10px); 
@@ -31,29 +77,23 @@
         }
         .logo { font-family: 'Bebas Neue'; font-size: 2.2rem; text-decoration: none; color: #fff; cursor: pointer; letter-spacing: 1px; z-index: 2100; }
         .logo span { color: var(--primary); }
-        
         .menu-btn { background: none; border: none; color: #fff; cursor: pointer; z-index: 2100; display: block; }
         
-        /* Fullscreen Overlay Nav */
+        /* Nav Overlay */
         .nav-overlay {
             position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
             background: var(--bg); display: flex; flex-direction: column;
             align-items: center; justify-content: center; transition: 0.5s ease; z-index: 2050;
         }
         .nav-overlay.active { right: 0; }
-        .nav-overlay a { 
-            font-family: 'Bebas Neue'; font-size: 3rem; color: #fff; 
-            text-decoration: none; margin: 15px 0; letter-spacing: 3px; transition: 0.3s;
-        }
-        .nav-overlay a:hover { color: var(--primary); }
+        .nav-overlay a { font-family: 'Bebas Neue'; font-size: 3rem; color: #fff; text-decoration: none; margin: 15px 0; letter-spacing: 3px; }
         .nav-close { position: absolute; top: 20px; right: 5%; font-size: 1.5rem; background: none; border: none; color: #fff; cursor: pointer; }
 
-        /* Multi-Page Views */
         .page { display: none; min-height: 100vh; padding-top: 80px; animation: fadeIn 0.4s ease; }
         .page.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* Hero */
+        /* Hero (Optimized) */
         .hero { 
             height: 100vh; 
             background: linear-gradient(rgba(30, 30, 30, 0.4), rgba(30, 30, 30, 0.8)), 
@@ -63,54 +103,41 @@
         }
         .hero h1 { font-family: 'Bebas Neue'; font-size: clamp(4rem, 18vw, 9rem); line-height: 0.8; margin-bottom: 10px; }
         .hero p { color: var(--accent); font-weight: 800; letter-spacing: 6px; margin-bottom: 40px; text-transform: uppercase; }
-        .cta-btn { display: inline-block; padding: 18px 45px; background: var(--primary); color: #000; text-decoration: none; font-weight: 800; border-radius: 2px; border: none; cursor: pointer; letter-spacing: 1px; text-transform: uppercase;}
+        .cta-btn { display: inline-block; padding: 18px 45px; background: var(--primary); color: #000; text-decoration: none; font-weight: 800; border-radius: 2px; border: none; cursor: pointer; letter-spacing: 1px; transition: 0.3s; }
+        .cta-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,140,0,0.5); }
 
-        /* Container */
+        /* Sections */
         .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
         .section-header { text-align: center; margin-bottom: 60px; }
         .section-header h2 { font-family: 'Bebas Neue'; font-size: 3.5rem; letter-spacing: 2px; }
         .section-header p { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 3px; }
 
-        /* Visual Menu Cards */
+        /* Cards */
         .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .menu-card { background: var(--card); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; }
-        .menu-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .menu-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .menu-img { width: 100%; height: 250px; object-fit: cover; }
         .menu-info { padding: 30px; }
-        .menu-info h3 { font-family: 'Bebas Neue'; font-size: 2rem; color: #fff; margin-bottom: 5px; }
-        .menu-info .price { color: var(--accent); font-size: 1.5rem; font-weight: 800; display: block; margin-bottom: 15px; }
-        .menu-info p { font-size: 0.9rem; color: #bbb; margin-bottom: 25px; line-height: 1.5; }
-        .book-link { color: var(--primary); text-decoration: none; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; border-bottom: 2px solid var(--primary); padding-bottom: 5px; }
+        .menu-info h3 { font-family: 'Bebas Neue'; font-size: 2rem; color: #fff; }
+        .price { color: var(--accent); font-size: 1.5rem; font-weight: 800; display: block; margin: 10px 0; }
 
-        /* Team Section */
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .barber-card { text-align: center; background: var(--card); border-radius: 8px; overflow: hidden; padding-bottom: 25px; }
-        .barber-img { width: 100%; height: 350px; object-fit: cover; }
-        .barber-card h4 { margin-top: 20px; font-family: 'Bebas Neue'; font-size: 1.8rem; }
-        .barber-card p { font-size: 0.85rem; color: var(--primary); font-weight: 700; text-transform: uppercase; }
+        /* Policy Section (Pro Feature) */
+        .policy-box { background: #151515; padding: 40px; border-radius: 8px; border: 1px dashed #444; margin-top: 40px; }
+        .policy-box h4 { font-family: 'Bebas Neue'; color: var(--primary); margin-bottom: 10px; }
+        .policy-box p { font-size: 0.8rem; color: #888; }
 
-        /* STAY SHARP (Home Only - Form Removed) */
-        .stay-sharp { background: var(--primary); color: #000; padding: 100px 20px; text-align: center; margin-top: 40px; }
-        .stay-sharp h3 { font-family: 'Bebas Neue'; font-size: 4.5rem; line-height: 0.9; margin-bottom: 20px; }
-        .stay-sharp p { font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 30px; }
-
+        /* Footer */
         footer { padding: 80px 5%; background: #151515; border-top: 1px solid #222; text-align: center; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
-        .footer-col h4 { font-family: 'Bebas Neue'; font-size: 1.5rem; color: var(--primary); margin-bottom: 15px; }
-        .footer-col p { font-size: 0.9rem; color: #999; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo" onclick="showPage('home')">SUNSET <span>ALL STARS</span></div>
-        <!-- Triple Bar Menu -->
-        <button class="menu-btn" onclick="toggleMenu()">
-            <i data-lucide="menu" size="32"></i>
-        </button>
+        <button class="menu-btn" onclick="toggleMenu()"><i data-lucide="menu" size="32"></i></button>
     </header>
 
-    <!-- Fullscreen Menu Overlay -->
     <div class="nav-overlay" id="navOverlay">
         <button class="nav-close" onclick="toggleMenu()"><i data-lucide="x" size="40"></i></button>
         <a href="#" onclick="showPage('home')">HOME</a>
@@ -119,107 +146,89 @@
         <a href="#" onclick="showPage('booking')">BOOK NOW</a>
     </div>
 
-    <!-- PAGE: HOME -->
+    <!-- HOME -->
     <main id="home" class="page active">
         <section class="hero">
             <div class="hero-content">
                 <p>369 50TH ST, BROOKLYN</p>
-                <h1>SUNSET ALL STARS</h1>
-                <button class="cta-btn" onclick="showPage('booking')">Reserve Your Chair</button>
+                <h1>STAY SHARP.</h1>
+                <button class="cta-btn" onclick="showPage('booking')">Book Appointment</button>
             </div>
         </section>
 
-        <!-- Team Section -->
         <div class="container">
             <div class="section-header">
-                <p>Expert Groomers</p>
-                <h2>Meet Our Team</h2>
-            </div>
-            <div class="team-grid">
-                <div class="barber-card">
-                    <img src="https://images.unsplash.com/photo-1599351474290-288d8460d7d9?q=80&w=500" class="barber-img" alt="Alex">
-                    <h4>ALEX</h4><p>Master Barber</p>
-                </div>
-                <div class="barber-card">
-                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=500" class="barber-img" alt="Nico">
-                    <h4>NICO</h4><p>Fade Specialist</p>
-                </div>
-                <div class="barber-card">
-                    <img src="https://images.unsplash.com/photo-1621605815841-aa897af449c2?q=80&w=500" class="barber-img" alt="Julian">
-                    <h4>JULIAN</h4><p>Beard Stylist</p>
-                </div>
-            </div>
-        </div>
-
-        <section class="stay-sharp">
-            <h3>STAY SHARP.</h3>
-            <p>Premium Brooklyn Grooming since 2026</p>
-            <button class="cta-btn" style="background: #000; color: #fff;" onclick="showPage('booking')">Book Now</button>
-        </section>
-    </main>
-
-    <!-- PAGE: MENU -->
-    <main id="menu" class="page">
-        <div class="container">
-            <div class="section-header">
-                <p>Digital Menu</p>
-                <h2>Choose Your Style</h2>
+                <p>Master Barbers</p>
+                <h2>The All Star Team</h2>
             </div>
             <div class="menu-grid">
                 <div class="menu-card">
-                    <img src="https://i.postimg.cc/02V5DRsP/cut1.png" class="menu-img" alt="Haircut">
+                    <img src="https://i.postimg.cc/sgfckn0Z/Alex.jpg" class="menu-img" alt="Alex Master Barber" loading="lazy">
+                    <div class="menu-info"><h3>ALEX</h3><p>Master Barber</p></div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://i.postimg.cc/MpZDCsrH/Nico.jpg" class="menu-img" alt="Nico Fade Specialist" loading="lazy">
+                    <div class="menu-info"><h3>NICO</h3><p>Fade Specialist</p></div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://i.postimg.cc/fRWKGHgR/Julian.jpg" class="menu-img" alt="Julian Beard Stylist" loading="lazy">
+                    <div class="menu-info"><h3>JULIAN</h3><p>Beard Stylist</p></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- MENU -->
+    <main id="menu" class="page">
+        <div class="container">
+            <div class="section-header"><p>Visual Lookbook</p><h2>Our Services</h2></div>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <img src="https://i.postimg.cc/02V5DRsP/cut1.png" class="menu-img" alt="Signature Haircut" loading="lazy">
                     <div class="menu-info">
-                        <h3>Signature Haircut</h3>
-                        <span class="price">$35</span>
-                        <p>A precision fade or classic scissor cut. Includes a relaxing hair wash and a sharp straight-razor finish.</p>
-                        <a href="#" class="book-link" onclick="showPage('booking')">Book This Service</a>
+                        <h3>Signature Haircut</h3><span class="price">$35</span>
+                        <p>Precision fade or classic scissor cut. Includes wash and razor finish.</p>
+                        <button class="cta-btn" style="width:100%; font-size: 0.7rem;" onclick="showPage('booking')">Select Service</button>
                     </div>
                 </div>
                 <div class="menu-card">
-                    <img src="https://i.postimg.cc/CMv94FRY/cut3.jpg" class="menu-img" alt="Beard">
+                    <img src="https://i.postimg.cc/CMv94FRY/cut3.jpg" class="menu-img" alt="Beard Architecture" loading="lazy">
                     <div class="menu-info">
-                        <h3>Beard Architecture</h3>
-                        <span class="price">$20</span>
-                        <p>Complete beard sculpting and shaping. Includes hot towel treatment and premium beard oil application.</p>
-                        <a href="#" class="book-link" onclick="showPage('booking')">Book This Service</a>
+                        <h3>Beard Architecture</h3><span class="price">$20</span>
+                        <p>Complete sculpting and hot towel treatment for the perfect line.</p>
+                        <button class="cta-btn" style="width:100%; font-size: 0.7rem;" onclick="showPage('booking')">Select Service</button>
                     </div>
                 </div>
                 <div class="menu-card">
-                    <img src="https://i.postimg.cc/6QskGYyL/cut2.png" class="menu-img" alt="Combo">
+                    <img src="https://i.postimg.cc/6QskGYyL/cut2.png" class="menu-img" alt="All Star Combo" loading="lazy">
                     <div class="menu-info">
-                        <h3>The All Star Combo</h3>
-                        <span class="price">$60</span>
-                        <p>The full package. Includes our Signature Haircut, Beard Architecture, and a charcoal face mask refreshment.</p>
-                        <a href="#" class="book-link" onclick="showPage('booking')">Book This Service</a>
+                        <h3>All Star Combo</h3><span class="price">$60</span>
+                        <p>The total package. Haircut, Beard Sculpt, and Face Mask.</p>
+                        <button class="cta-btn" style="width:100%; font-size: 0.7rem;" onclick="showPage('booking')">Select Service</button>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- PAGE: GALLERY -->
+    <!-- GALLERY -->
     <main id="gallery" class="page">
         <div class="container">
-            <div class="section-header">
-                <p>The Portfolio</p>
-                <h2>Our Work</h2>
-            </div>
-            <div class="team-grid">
-                <img src="https://i.postimg.cc/02V5DRsP/cut1.png" style="width:100%; height:450px; object-fit:cover; border-radius:8px;" alt="Work">
-                <img src="https://i.postimg.cc/6QskGYyL/cut2.png" style="width:100%; height:450px; object-fit:cover; border-radius:8px;" alt="Work">
-                <img src="https://i.postimg.cc/CMv94FRY/cut3.jpg" style="width:100%; height:450px; object-fit:cover; border-radius:8px;" alt="Work">
-                <img src="https://i.postimg.cc/yxXdwktt/cut4.jpg" style="width:100%; height:450px; object-fit:cover; border-radius:8px;" alt="Work">
+            <div class="section-header"><p>Portfolio</p><h2>Our Work</h2></div>
+            <div class="menu-grid">
+                <img src="https://i.postimg.cc/02V5DRsP/cut1.png" class="menu-img" style="height:450px;" alt="Work 1" loading="lazy">
+                <img src="https://i.postimg.cc/6QskGYyL/cut2.png" class="menu-img" style="height:450px;" alt="Work 2" loading="lazy">
+                <img src="https://i.postimg.cc/CMv94FRY/cut3.jpg" class="menu-img" style="height:450px;" alt="Work 3" loading="lazy">
+                <img src="https://i.postimg.cc/yxXdwktt/cut4.jpg" class="menu-img" style="height:450px;" alt="Work 4" loading="lazy">
             </div>
         </div>
     </main>
 
-    <!-- PAGE: BOOKING -->
+    <!-- BOOKING -->
     <main id="booking" class="page">
         <div class="container" style="max-width: 600px;">
-            <div class="section-header">
-                <h2>Secure Your Chair</h2>
-            </div>
-            <div style="background:var(--card); padding:40px; border-radius:8px;">
+            <div class="section-header"><h2>Book Your Chair</h2></div>
+            <div style="background:var(--card); padding:40px; border-radius:12px;">
                 <select id="svc" style="width:100%; padding:15px; margin-bottom:20px; background:#333; color:#fff; border:none; border-radius:4px;">
                     <option value="Haircut">Signature Haircut - $35</option>
                     <option value="Beard">Beard Architecture - $20</option>
@@ -229,16 +238,22 @@
                 <input type="text" id="nameS" placeholder="Full Name" style="width:100%; padding:15px; margin-bottom:20px; background:#333; color:#fff; border:none; border-radius:4px;">
                 <input type="tel" id="phoneS" placeholder="Mobile Number" style="width:100%; padding:15px; margin-bottom:20px; background:#333; color:#fff; border:none; border-radius:4px;">
                 <button class="cta-btn" style="width: 100%;" onclick="bookNow()">Confirm via WhatsApp</button>
+                
+                <div class="policy-box">
+                    <h4>Booking Policy</h4>
+                    <p>Please arrive 5 minutes early. Cancellations must be made 2 hours in advance. Late arrivals over 15 minutes may result in appointment forfeiture.</p>
+                </div>
             </div>
         </div>
     </main>
 
     <footer>
         <div class="footer-grid">
-            <div class="footer-col"><h4>Address</h4><p>369 50th St, Brooklyn, NY</p></div>
+            <div class="footer-col"><h4>Address</h4><p>369 50th St, Brooklyn, NY 11220</p></div>
             <div class="footer-col"><h4>Hours</h4><p>Mon - Sun: 9am - 9pm</p></div>
             <div class="footer-col"><h4>Social</h4><p>@sunsetallstarbarbershop</p></div>
         </div>
+        <p style="font-size:0.7rem; opacity:0.3; margin-top:50px;">&copy; 2026 SUNSET ALL STAR BARBER SHOP. ALL RIGHTS RESERVED.</p>
     </footer>
 
     <script>
