@@ -3,104 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunset All Stars | Brooklyn's Gold Standard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Sunset All Stars | Premium Brooklyn Grooming</title>
+    <!-- Premium Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
         :root { 
             --primary: #ff8c00; 
             --accent: #ffd700;  
-            --bg: #0a0a0a;      
+            --bg: #080808;      
             --card: #121212; 
             --text: #ffffff;
-            --border: rgba(255, 140, 0, 0.2);
+            --muted: #888888;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Montserrat', sans-serif; overflow-x: hidden; scroll-behavior: smooth;}
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Montserrat', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
         
-        /* Navigation */
+        /* Navigation - Pro Minimalist */
         header { 
             position: fixed; width: 100%; padding: 15px 5%; z-index: 2000; 
-            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(15px); 
+            background: rgba(0, 0, 0, 0.98); backdrop-filter: blur(10px); 
             display: flex; justify-content: space-between; align-items: center; 
-            border-bottom: 1px solid var(--border); 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
         }
         .logo { font-family: 'Bebas Neue'; font-size: 2.2rem; text-decoration: none; color: #fff; cursor: pointer; letter-spacing: 1px; }
         .logo span { color: var(--primary); }
         
         nav { display: flex; gap: 20px; align-items: center; }
-        nav button { background: none; border: none; color: #fff; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
-        nav button:hover { color: var(--primary); }
-        
-        .book-trigger { 
-            background: var(--primary) !important; color: #000 !important; 
-            padding: 10px 20px; border-radius: 4px; font-weight: 800;
-            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
-        }
+        nav button { background: none; border: none; color: #fff; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
+        .nav-book { border: 1px solid var(--primary) !important; color: var(--primary) !important; padding: 8px 15px; border-radius: 2px; }
+        .nav-book:hover { background: var(--primary); color: #000 !important; }
 
-        /* Page Handling */
-        .page { display: none; min-height: 100vh; padding-top: 100px; animation: fadeIn 0.5s ease; }
+        /* Multi-Page Views */
+        .page { display: none; min-height: 100vh; padding-top: 80px; animation: fadeIn 0.4s ease; }
         .page.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* Hero */
+        /* Hero - Modern Bold */
         .hero { 
             height: 100vh; 
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.85)), 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.9)), 
             url('https://i.postimg.cc/qRT1pFgQ/hero.png'); 
             background-size: cover; background-position: center; 
-            display: flex; align-items: center; justify-content: center; text-align: center; margin-top: -100px; 
+            display: flex; align-items: center; justify-content: center; text-align: center; margin-top: -80px; 
         }
-        .hero h1 { font-family: 'Bebas Neue'; font-size: clamp(4rem, 15vw, 8rem); line-height: 0.85; margin-bottom: 10px; }
-        .hero p { color: var(--accent); font-weight: 700; letter-spacing: 5px; margin-bottom: 30px; }
+        .hero h1 { font-family: 'Bebas Neue'; font-size: clamp(4rem, 18vw, 9rem); line-height: 0.8; margin-bottom: 10px; }
+        .hero p { color: var(--accent); font-weight: 800; letter-spacing: 6px; margin-bottom: 40px; text-transform: uppercase; }
+        .cta-btn { display: inline-block; padding: 18px 45px; background: var(--primary); color: #000; text-decoration: none; font-weight: 800; border-radius: 2px; border: none; cursor: pointer; letter-spacing: 1px; }
 
-        /* --- ACTUAL MENU DESIGN (The Board Look) --- */
-        .menu-container {
-            max-width: 800px; margin: 40px auto; background: var(--card);
-            padding: 60px 40px; border: 1px solid var(--border);
-            position: relative; border-radius: 4px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
-        .menu-container::before {
-            content: ""; position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;
-            border: 1px solid rgba(255, 140, 0, 0.1); pointer-events: none;
-        }
-        .menu-header { text-align: center; margin-bottom: 50px; }
-        .menu-header h2 { font-family: 'Bebas Neue'; font-size: 4rem; color: var(--primary); letter-spacing: 3px; }
-        .menu-header p { text-transform: uppercase; font-size: 0.8rem; letter-spacing: 4px; color: var(--accent); }
+        /* Container & Titles */
+        .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-family: 'Bebas Neue'; font-size: 3.5rem; letter-spacing: 2px; }
+        .section-header p { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 3px; }
 
-        .menu-row { display: flex; align-items: baseline; margin-bottom: 25px; position: relative; }
-        .menu-name { font-family: 'Bebas Neue'; font-size: 1.8rem; color: #fff; padding-right: 15px; background: var(--card); z-index: 1; }
-        .menu-dots { flex: 1; border-bottom: 2px dotted rgba(255,255,255,0.2); margin-bottom: 5px; }
-        .menu-price { font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--accent); padding-left: 15px; background: var(--card); z-index: 1; }
-        .menu-desc { font-size: 0.85rem; color: #888; margin-top: -15px; margin-bottom: 20px; font-style: italic; }
+        /* Team Section (New) */
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .barber-card { text-align: center; background: var(--card); padding-bottom: 20px; border-radius: 4px; overflow: hidden; }
+        .barber-img { width: 100%; height: 300px; object-fit: cover; filter: grayscale(1); transition: 0.4s; }
+        .barber-card:hover .barber-img { filter: grayscale(0); }
+        .barber-card h4 { margin-top: 15px; font-family: 'Bebas Neue'; font-size: 1.5rem; }
+        .barber-card p { font-size: 0.8rem; color: var(--primary); font-weight: 700; }
 
-        /* Booking Section */
-        .booking-ui { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 20px; background: #000; padding: 40px; border-radius: 10px; border: 1px solid #222;
-        }
-        .step-title { font-family: 'Bebas Neue'; color: var(--primary); font-size: 1.5rem; margin-bottom: 15px; }
-        .opt { background: #1a1a1a; padding: 15px; margin-bottom: 10px; border-radius: 4px; cursor: pointer; display: flex; justify-content: space-between; border: 1px solid transparent; }
-        .opt.active { background: var(--primary); color: #000; font-weight: bold; }
-        input { width: 100%; padding: 15px; background: #1a1a1a; border: 1px solid #333; color: #fff; border-radius: 4px; margin-bottom: 15px; font-family: inherit; }
-        .time-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; max-height: 150px; overflow-y: auto; }
-        .time-slot { background: #1a1a1a; padding: 10px; text-align: center; cursor: pointer; border-radius: 4px; font-size: 0.8rem; }
-        .time-slot.active { background: var(--accent); color: #000; font-weight: bold; }
+        /* Reviews Section (New) */
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .review-card { background: #111; padding: 30px; border-radius: 4px; border: 1px solid #222; }
+        .stars { color: var(--accent); margin-bottom: 10px; font-size: 0.8rem; }
+        .review-card p { font-style: italic; color: #ccc; margin-bottom: 15px; font-size: 0.9rem; }
+        .reviewer { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
 
-        /* Gallery */
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
-        .photo-grid img { width: 100%; height: 450px; object-fit: cover; border-radius: 4px; border: 1px solid #222; }
+        /* Map Section (New) */
+        .map-section { width: 100%; height: 450px; background: #111; position: relative; border-top: 1px solid #222; border-bottom: 1px solid #222; overflow: hidden;}
+        .map-overlay { position: absolute; top: 20px; left: 20px; background: #000; padding: 20px; z-index: 10; border-radius: 4px; border: 1px solid var(--primary); }
+        .map-overlay h4 { font-family: 'Bebas Neue'; font-size: 1.2rem; margin-bottom: 5px; }
 
-        .cta-btn { 
-            display: block; width: 100%; padding: 20px; background: var(--primary); 
-            color: #000; font-weight: 800; text-transform: uppercase; border: none; cursor: pointer; border-radius: 4px;
-        }
+        /* Menu Section (Board Style) */
+        .menu-board { max-width: 800px; margin: 0 auto; background: var(--card); padding: 50px; border: 1px solid #222; }
+        .menu-item { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 30px; }
+        .item-name { font-family: 'Bebas Neue'; font-size: 1.8rem; }
+        .item-dots { flex: 1; border-bottom: 2px dotted #333; margin: 0 15px; }
+        .item-price { font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--primary); }
 
-        footer { padding: 60px 20px; text-align: center; background: #050505; color: #444; font-size: 0.8rem; border-top: 1px solid #111; }
+        /* Newsletter (From your screenshot) */
+        .newsletter { background: var(--primary); color: #000; padding: 60px 20px; text-align: center; }
+        .newsletter h3 { font-family: 'Bebas Neue'; font-size: 2.5rem; margin-bottom: 10px; }
+        .sub-box { max-width: 500px; margin: 20px auto; display: flex; gap: 10px; }
+        .sub-box input { flex: 1; padding: 15px; border: 1px solid #000; background: #fff; font-family: inherit; }
+        .sub-box button { padding: 0 30px; background: #000; color: #fff; border: none; font-weight: 800; cursor: pointer; }
+
+        /* Footer */
+        footer { padding: 60px 5%; background: #000; border-top: 1px solid #111; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .footer-col h4 { font-family: 'Bebas Neue'; font-size: 1.5rem; color: var(--primary); margin-bottom: 20px; }
+        .footer-col p { font-size: 0.9rem; color: #666; margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -108,135 +105,181 @@
     <header>
         <div class="logo" onclick="showPage('home')">SUNSET <span>ALL STARS</span></div>
         <nav>
-            <button onclick="showPage('menu')">Menu</button>
+            <button onclick="showPage('home')">Home</button>
+            <button onclick="showPage('menu')">Services</button>
             <button onclick="showPage('gallery')">Gallery</button>
-            <button onclick="showPage('booking')" class="book-trigger">Book Appointment</button>
+            <button onclick="showPage('booking')" class="nav-book">Book Now</button>
         </nav>
     </header>
 
-    <!-- HOME PAGE -->
+    <!-- PAGE: HOME -->
     <main id="home" class="page active">
         <section class="hero">
-            <div>
-                <p>ESTABLISHED IN BROOKLYN</p>
-                <h1>SHARP CUTS.<br>GOLD STANDARDS.</h1>
-                <button class="book-trigger" style="border:none; margin-top:20px; padding:15px 40px; cursor:pointer;" onclick="showPage('booking')">RESERVE A CHAIR</button>
+            <div class="hero-content">
+                <p>369 50TH ST, BROOKLYN</p>
+                <h1>STAY SHARP.</h1>
+                <button class="cta-btn" onclick="showPage('booking')">Reserve Your Chair</button>
             </div>
         </section>
-    </main>
 
-    <!-- MENU PAGE (Actual Menu Design) -->
-    <main id="menu" class="page">
-        <div class="menu-container">
-            <div class="menu-header">
-                <p>Luxury Grooming</p>
-                <h2>Service Menu</h2>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-row">
-                    <div class="menu-name">Signature Haircut</div>
-                    <div class="menu-dots"></div>
-                    <div class="menu-price">$35</div>
-                </div>
-                <div class="menu-desc">Precision fade or taper, hair wash, and straight razor finish.</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-row">
-                    <div class="menu-name">Beard Architecture</div>
-                    <div class="menu-dots"></div>
-                    <div class="menu-price">$20</div>
-                </div>
-                <div class="menu-desc">Hot towel treatment, sculpting, and premium beard oil.</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-row">
-                    <div class="menu-name">All Star Combo</div>
-                    <div class="menu-dots"></div>
-                    <div class="menu-price">$60</div>
-                </div>
-                <div class="menu-desc">The full experience: Haircut, Beard, and Face Mask.</div>
-            </div>
-
-            <div class="menu-item" style="margin-top: 40px;">
-                <button class="cta-btn" onclick="showPage('booking')">Ready to Book?</button>
-            </div>
-        </div>
-    </main>
-
-    <!-- BOOKING PAGE (Functional Logic) -->
-    <main id="booking" class="page">
+        <!-- Team Section -->
         <div class="container">
-            <h2 style="font-family:'Bebas Neue'; font-size:3rem; text-align:center; margin-bottom:30px; color:var(--primary);">SECURE YOUR APPOINTMENT</h2>
-            <div class="booking-ui">
-                <div>
-                    <h4 class="step-title">1. Select Service</h4>
-                    <div class="opt" onclick="setS('Signature Haircut')">Haircut <span>$35</span></div>
-                    <div class="opt" onclick="setS('Beard Architecture')">Beard <span>$20</span></div>
-                    <div class="opt" onclick="setS('All Star Combo')">Full Combo <span>$60</span></div>
+            <div class="section-header">
+                <p>Expert Groomers</p>
+                <h2>Meet The All Stars</h2>
+            </div>
+            <div class="team-grid">
+                <div class="barber-card">
+                    <img src="https://images.unsplash.com/photo-1599351474290-288d8460d7d9?q=80&w=500" class="barber-img" alt="Barber">
+                    <h4>Alex</h4><p>Master Barber</p>
                 </div>
-                <div>
-                    <h4 class="step-title">2. Date & Time</h4>
-                    <input type="date" id="bDate">
-                    <div id="tGrid" class="time-grid"></div>
+                <div class="barber-card">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=500" class="barber-img" alt="Barber">
+                    <h4>Nico</h4><p>Fade Specialist</p>
                 </div>
-                <div>
-                    <h4 class="step-title">3. Your Info</h4>
-                    <input type="text" id="uName" placeholder="Full Name">
-                    <input type="tel" id="uPhone" placeholder="Mobile Number">
-                    <button class="cta-btn" onclick="confirm()">Send WhatsApp Request</button>
+                <div class="barber-card">
+                    <img src="https://images.unsplash.com/photo-1621605815841-aa897af449c2?q=80&w=500" class="barber-img" alt="Barber">
+                    <h4>Julian</h4><p>Beard Stylist</p>
                 </div>
+            </div>
+        </div>
+
+        <!-- Reviews -->
+        <div class="container" style="background: #050505;">
+            <div class="section-header">
+                <p>What they say</p>
+                <h2>Client Reviews</h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Best fade in Brooklyn. These guys are real artists. The atmosphere is 5 stars."</p>
+                    <div class="reviewer">- Marcus J.</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Excellent service and very professional. The hot towel treatment is a game changer."</p>
+                    <div class="reviewer">- David L.</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Been coming here for 2 years. Always on time and always a perfect cut."</p>
+                    <div class="reviewer">- Sam W.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Google Map Section -->
+        <div class="map-section">
+            <div class="map-overlay">
+                <h4>Sunset All Stars</h4>
+                <p style="font-size: 0.8rem; color:#aaa;">369 50th St, Brooklyn, NY 11220</p>
+                <a href="https://maps.google.com/?q=369+50th+St+Brooklyn" target="_blank" style="color:var(--primary); font-size: 0.7rem; font-weight:800; text-decoration:none;">GET DIRECTIONS</a>
+            </div>
+            <!-- Standard Google Map Embed -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.674488439366!2d-74.02058442436814!3d40.6370425714045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25ab73656093d%3A0xc3678385d89f7f98!2s369%2050th%20St%2C%20Brooklyn%2C%20NY%2011220!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </main>
+
+    <!-- PAGE: MENU -->
+    <main id="menu" class="page">
+        <div class="container">
+            <div class="section-header">
+                <p>Luxury Menu</p>
+                <h2>Service List</h2>
+            </div>
+            <div class="menu-board">
+                <div class="menu-item">
+                    <div class="item-name">Signature Haircut</div>
+                    <div class="item-dots"></div>
+                    <div class="item-price">$35</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Beard Architecture</div>
+                    <div class="item-dots"></div>
+                    <div class="item-price">$20</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">The All Star Package</div>
+                    <div class="item-dots"></div>
+                    <div class="item-price">$60</div>
+                </div>
+                <button class="cta-btn" style="width: 100%;" onclick="showPage('booking')">Book Your Session</button>
             </div>
         </div>
     </main>
 
-    <!-- GALLERY PAGE -->
+    <!-- PAGE: GALLERY -->
     <main id="gallery" class="page">
         <div class="container">
-            <h2 style="font-family:'Bebas Neue'; font-size:3rem; text-align:center; margin-bottom:30px; color:var(--primary);">OUR WORK</h2>
-            <div class="photo-grid">
-                <img src="https://i.postimg.cc/02V5DRsP/cut1.png" alt="1">
-                <img src="https://i.postimg.cc/6QskGYyL/cut2.png" alt="2">
-                <img src="https://i.postimg.cc/CMv94FRY/cut3.jpg" alt="3">
-                <img src="https://i.postimg.cc/yxXdwktt/cut4.jpg" alt="4">
+            <div class="section-header">
+                <p>Our Work</p>
+                <h2>Photo Gallery</h2>
+            </div>
+            <div class="reviews-grid">
+                <img src="https://i.postimg.cc/02V5DRsP/cut1.png" style="width:100%; height:400px; object-fit:cover;" alt="Cut">
+                <img src="https://i.postimg.cc/6QskGYyL/cut2.png" style="width:100%; height:400px; object-fit:cover;" alt="Cut">
+                <img src="https://i.postimg.cc/CMv94FRY/cut3.jpg" style="width:100%; height:400px; object-fit:cover;" alt="Cut">
+                <img src="https://i.postimg.cc/yxXdwktt/cut4.jpg" style="width:100%; height:400px; object-fit:cover;" alt="Cut">
             </div>
         </div>
     </main>
 
+    <!-- PAGE: BOOKING -->
+    <main id="booking" class="page">
+        <div class="container" style="max-width: 600px;">
+            <div class="section-header">
+                <h2>Secure Your Chair</h2>
+            </div>
+            <div style="background:var(--card); padding:40px; border:1px solid #222;">
+                <select id="svcS" style="width:100%; padding:15px; margin-bottom:20px; background:#222; color:#fff; border:1px solid #333;">
+                    <option value="Haircut">Signature Haircut - $35</option>
+                    <option value="Beard">Beard Architecture - $20</option>
+                    <option value="Combo">All Star Combo - $60</option>
+                </select>
+                <input type="date" id="bkD">
+                <input type="text" id="bkN" placeholder="Full Name">
+                <input type="tel" id="bkP" placeholder="Mobile Number">
+                <button class="cta-btn" style="width: 100%;" onclick="finalB()">Confirm WhatsApp Booking</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Newsletter Footer -->
+    <section class="newsletter">
+        <h3>STAY SHARP.</h3>
+        <p>Subscribe to get exclusive offers and updates.</p>
+        <div class="sub-box">
+            <input type="email" placeholder="Enter your email">
+            <button>SUBSCRIBE</button>
+        </div>
+    </section>
+
     <footer>
-        <p><b>SUNSET ALL STARS BARBER SHOP</b></p>
-        <p>369 50th St, Brooklyn, NY 11220 | (347) 499-5257</p>
+        <div class="footer-col">
+            <h4>Location</h4>
+            <p>369 50th St, Brooklyn, NY 11220</p>
+        </div>
+        <div class="footer-col">
+            <h4>Hours</h4>
+            <p>Mon - Sun: 9:00 AM - 9:00 PM</p>
+        </div>
+        <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="https://instagram.com/sunsetallstarbarbershop" style="color:var(--primary); text-decoration:none;">Follow on Instagram</a>
+        </div>
     </footer>
 
     <script>
-        function showPage(pId) {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.getElementById(pId).classList.add('active');
+        function showPage(p) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(p).classList.add('active');
             window.scrollTo(0,0);
         }
-
-        let sS = "", sT = "";
-        function setS(n) {
-            sS = n; document.querySelectorAll('.opt').forEach(o => o.classList.remove('active'));
-            event.currentTarget.classList.add('active');
-        }
-
-        const hours = ["9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:30 PM", "2:30 PM", "3:30 PM", "4:30 PM", "5:30 PM", "6:30 PM", "7:30 PM", "8:00 PM"];
-        hours.forEach(t => {
-            let d = document.createElement('div'); d.className = 'time-slot'; d.innerText = t;
-            d.onclick = () => {
-                sT = t; document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('active'));
-                d.classList.add('active');
-            };
-            document.getElementById('tGrid').appendChild(d);
-        });
-
-        function confirm() {
-            const d = document.getElementById('bDate').value, n = document.getElementById('uName').value, p = document.getElementById('uPhone').value;
-            if(!sS || !d || !sT || !n || !p) return alert("Please fill the form.");
-            const msg = `SUNSET BOOKING:%0AClient: ${n}%0AService: ${sS}%0ADate: ${d}%0ATime: ${sT}`;
+        function finalB() {
+            const s = document.getElementById('svcS').value, d = document.getElementById('bkD').value, n = document.getElementById('bkN').value, p = document.getElementById('bkP').value;
+            if(!d || !n || !p) return alert("Please fill all fields.");
+            const msg = `SUNSET ALL STARS:%0AClient: ${n}%0APhone: ${p}%0AService: ${s}%0ADate: ${d}`;
             window.open(`https://wa.me/13474995257?text=${msg}`, '_blank');
         }
     </script>
