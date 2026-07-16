@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunset All Stars | Brooklyn Professional Grooming</title>
+    <title>Sunset All Stars | Premium Brooklyn Barber Shop</title>
     <!-- Modern Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
@@ -13,8 +13,8 @@
         :root { 
             --primary: #ff8c00; 
             --accent: #ffd700;  
-            --bg: #1e1e1e;      /* Modern Charcoal Gray - Not Gloomy Black */
-            --card: #2a2a2a;    /* Lighter Card Background */
+            --bg: #1e1e1e;      /* Modern Charcoal Gray - Lightened up */
+            --card: #2a2a2a;    
             --text: #ffffff;
             --muted: #bbbbbb;
         }
@@ -32,7 +32,6 @@
         .logo { font-family: 'Bebas Neue'; font-size: 2.2rem; text-decoration: none; color: #fff; cursor: pointer; letter-spacing: 1px; z-index: 2100; }
         .logo span { color: var(--primary); }
         
-        /* The Triple Bar Button */
         .menu-btn { background: none; border: none; color: #fff; cursor: pointer; z-index: 2100; display: block; }
         
         /* Fullscreen Overlay Nav */
@@ -64,7 +63,7 @@
         }
         .hero h1 { font-family: 'Bebas Neue'; font-size: clamp(4rem, 18vw, 9rem); line-height: 0.8; margin-bottom: 10px; }
         .hero p { color: var(--accent); font-weight: 800; letter-spacing: 6px; margin-bottom: 40px; text-transform: uppercase; }
-        .cta-btn { display: inline-block; padding: 18px 45px; background: var(--primary); color: #000; text-decoration: none; font-weight: 800; border-radius: 2px; border: none; cursor: pointer; letter-spacing: 1px; }
+        .cta-btn { display: inline-block; padding: 18px 45px; background: var(--primary); color: #000; text-decoration: none; font-weight: 800; border-radius: 2px; border: none; cursor: pointer; letter-spacing: 1px; text-transform: uppercase;}
 
         /* Container */
         .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
@@ -72,39 +71,31 @@
         .section-header h2 { font-family: 'Bebas Neue'; font-size: 3.5rem; letter-spacing: 2px; }
         .section-header p { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 3px; }
 
-        /* Team Section Fixed */
+        /* Visual Menu Cards */
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .menu-card { background: var(--card); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; }
+        .menu-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .menu-img { width: 100%; height: 250px; object-fit: cover; }
+        .menu-info { padding: 30px; }
+        .menu-info h3 { font-family: 'Bebas Neue'; font-size: 2rem; color: #fff; margin-bottom: 5px; }
+        .menu-info .price { color: var(--accent); font-size: 1.5rem; font-weight: 800; display: block; margin-bottom: 15px; }
+        .menu-info p { font-size: 0.9rem; color: #bbb; margin-bottom: 25px; line-height: 1.5; }
+        .book-link { color: var(--primary); text-decoration: none; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; border-bottom: 2px solid var(--primary); padding-bottom: 5px; }
+
+        /* Team Section */
         .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .barber-card { text-align: center; background: var(--card); border-radius: 8px; overflow: hidden; padding-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        .barber-img { width: 100%; height: 350px; object-fit: cover; transition: 0.5s; filter: brightness(0.9); }
-        .barber-card:hover .barber-img { transform: scale(1.05); filter: brightness(1.1); }
-        .barber-card h4 { margin-top: 20px; font-family: 'Bebas Neue'; font-size: 1.8rem; letter-spacing: 1px; }
+        .barber-card { text-align: center; background: var(--card); border-radius: 8px; overflow: hidden; padding-bottom: 25px; }
+        .barber-img { width: 100%; height: 350px; object-fit: cover; }
+        .barber-card h4 { margin-top: 20px; font-family: 'Bebas Neue'; font-size: 1.8rem; }
         .barber-card p { font-size: 0.85rem; color: var(--primary); font-weight: 700; text-transform: uppercase; }
 
-        /* Reviews */
-        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .review-card { background: var(--card); padding: 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
-        .stars { color: var(--accent); margin-bottom: 10px; }
-
-        /* Map Section */
-        .map-section { width: 100%; height: 450px; background: #222; position: relative; border-top: 1px solid #333; overflow: hidden;}
-        .map-overlay { position: absolute; top: 20px; left: 20px; background: #1a1a1a; padding: 25px; z-index: 10; border-radius: 4px; border-left: 5px solid var(--primary); }
-
-        /* Menu Section Board */
-        .menu-board { max-width: 800px; margin: 0 auto; background: var(--card); padding: 50px; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-        .menu-item { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 30px; }
-        .item-name { font-family: 'Bebas Neue'; font-size: 1.8rem; }
-        .item-dots { flex: 1; border-bottom: 2px dotted #444; margin: 0 15px; }
-        .item-price { font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--primary); }
-
-        /* Newsletter - HOME PAGE ONLY */
-        .newsletter { background: var(--primary); color: #000; padding: 80px 20px; text-align: center; margin-top: 40px; }
-        .newsletter h3 { font-family: 'Bebas Neue'; font-size: 3.5rem; line-height: 1; }
-        .sub-box { max-width: 600px; margin: 30px auto 0; display: flex; gap: 0; }
-        .sub-box input { flex: 1; padding: 20px; border: none; background: #fff; font-family: inherit; font-size: 1rem; }
-        .sub-box button { padding: 0 40px; background: #000; color: #fff; border: none; font-weight: 800; cursor: pointer; text-transform: uppercase; }
+        /* STAY SHARP (Home Only - Form Removed) */
+        .stay-sharp { background: var(--primary); color: #000; padding: 100px 20px; text-align: center; margin-top: 40px; }
+        .stay-sharp h3 { font-family: 'Bebas Neue'; font-size: 4.5rem; line-height: 0.9; margin-bottom: 20px; }
+        .stay-sharp p { font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 30px; }
 
         footer { padding: 80px 5%; background: #151515; border-top: 1px solid #222; text-align: center; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
         .footer-col h4 { font-family: 'Bebas Neue'; font-size: 1.5rem; color: var(--primary); margin-bottom: 15px; }
         .footer-col p { font-size: 0.9rem; color: #999; }
     </style>
@@ -113,7 +104,7 @@
 
     <header>
         <div class="logo" onclick="showPage('home')">SUNSET <span>ALL STARS</span></div>
-        <!-- Triple Slash (Menu) Button -->
+        <!-- Triple Bar Menu -->
         <button class="menu-btn" onclick="toggleMenu()">
             <i data-lucide="menu" size="32"></i>
         </button>
@@ -123,8 +114,8 @@
     <div class="nav-overlay" id="navOverlay">
         <button class="nav-close" onclick="toggleMenu()"><i data-lucide="x" size="40"></i></button>
         <a href="#" onclick="showPage('home')">HOME</a>
-        <a href="#" onclick="showPage('menu')">SERVICES</a>
-        <a href="#" onclick="showPage('gallery')">GALLERY</a>
+        <a href="#" onclick="showPage('menu')">SERVICE MENU</a>
+        <a href="#" onclick="showPage('gallery')">PORTFOLIO</a>
         <a href="#" onclick="showPage('booking')">BOOK NOW</a>
     </div>
 
@@ -132,8 +123,8 @@
     <main id="home" class="page active">
         <section class="hero">
             <div class="hero-content">
-                <p>ESTABLISHED IN BROOKLYN</p>
-                <h1>STAY SHARP.</h1>
+                <p>369 50TH ST, BROOKLYN</p>
+                <h1>SUNSET ALL STARS</h1>
                 <button class="cta-btn" onclick="showPage('booking')">Reserve Your Chair</button>
             </div>
         </section>
@@ -160,24 +151,10 @@
             </div>
         </div>
 
-        <!-- Google Map Section -->
-        <div class="map-section">
-            <div class="map-overlay">
-                <h4 style="font-family:'Bebas Neue'; font-size:1.5rem; color:var(--primary);">Sunset All Stars</h4>
-                <p style="font-size: 0.9rem; color:#fff;">369 50th St, Brooklyn, NY</p>
-                <a href="https://maps.google.com/?q=369+50th+St+Brooklyn" target="_blank" style="color:var(--accent); font-size: 0.75rem; font-weight:800; text-decoration:none; display:block; margin-top:10px;">GET DIRECTIONS</a>
-            </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.674488439366!2d-74.02058442436814!3d40.6370425714045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25ab73656093d%3A0xc3678385d89f7f98!2s369%2050th%20St%2C%20Brooklyn%2C%20NY%2011220!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-
-        <!-- Stay Sharp Newsletter (HOME PAGE ONLY) -->
-        <section class="newsletter">
+        <section class="stay-sharp">
             <h3>STAY SHARP.</h3>
-            <p>Join the inner circle for exclusive updates and style tips.</p>
-            <div class="sub-box">
-                <input type="email" placeholder="Email Address">
-                <button>JOIN</button>
-            </div>
+            <p>Premium Brooklyn Grooming since 2026</p>
+            <button class="cta-btn" style="background: #000; color: #fff;" onclick="showPage('booking')">Book Now</button>
         </section>
     </main>
 
@@ -185,20 +162,37 @@
     <main id="menu" class="page">
         <div class="container">
             <div class="section-header">
-                <p>Luxury Menu</p>
-                <h2>Service List</h2>
+                <p>Digital Menu</p>
+                <h2>Choose Your Style</h2>
             </div>
-            <div class="menu-board">
-                <div class="menu-item">
-                    <div class="item-name">Signature Haircut</div><div class="item-dots"></div><div class="item-price">$35</div>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <img src="https://i.postimg.cc/02V5DRsP/cut1.png" class="menu-img" alt="Haircut">
+                    <div class="menu-info">
+                        <h3>Signature Haircut</h3>
+                        <span class="price">$35</span>
+                        <p>A precision fade or classic scissor cut. Includes a relaxing hair wash and a sharp straight-razor finish.</p>
+                        <a href="#" class="book-link" onclick="showPage('booking')">Book This Service</a>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <div class="item-name">Beard Architecture</div><div class="item-dots"></div><div class="item-price">$20</div>
+                <div class="menu-card">
+                    <img src="https://i.postimg.cc/CMv94FRY/cut3.jpg" class="menu-img" alt="Beard">
+                    <div class="menu-info">
+                        <h3>Beard Architecture</h3>
+                        <span class="price">$20</span>
+                        <p>Complete beard sculpting and shaping. Includes hot towel treatment and premium beard oil application.</p>
+                        <a href="#" class="book-link" onclick="showPage('booking')">Book This Service</a>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <div class="item-name">All Star Package</div><div class="item-dots"></div><div class="item-price">$60</div>
+                <div class="menu-card">
+                    <img src="https://i.postimg.cc/6QskGYyL/cut2.png" class="menu-img" alt="Combo">
+                    <div class="menu-info">
+                        <h3>The All Star Combo</h3>
+                        <span class="price">$60</span>
+                        <p>The full package. Includes our Signature Haircut, Beard Architecture, and a charcoal face mask refreshment.</p>
+                        <a href="#" class="book-link" onclick="showPage('booking')">Book This Service</a>
+                    </div>
                 </div>
-                <button class="cta-btn" style="width: 100%; margin-top:20px;" onclick="showPage('booking')">Book Your Session</button>
             </div>
         </div>
     </main>
@@ -245,27 +239,18 @@
             <div class="footer-col"><h4>Hours</h4><p>Mon - Sun: 9am - 9pm</p></div>
             <div class="footer-col"><h4>Social</h4><p>@sunsetallstarbarbershop</p></div>
         </div>
-        <p style="font-size:0.8rem; opacity:0.4;">&copy; 2026 SUNSET ALL STAR BARBER SHOP</p>
     </footer>
 
     <script>
         lucide.createIcons();
-
-        // Hamburger Menu Toggle
-        function toggleMenu() {
-            const overlay = document.getElementById('navOverlay');
-            overlay.classList.toggle('active');
-        }
-
-        // SPA Page Switching
+        function toggleMenu() { document.getElementById('navOverlay').classList.toggle('active'); }
         function showPage(p) {
             document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
             document.getElementById(p).classList.add('active');
             const overlay = document.getElementById('navOverlay');
-            if(overlay.classList.contains('active')) toggleMenu(); // Close menu on click
+            if(overlay.classList.contains('active')) toggleMenu();
             window.scrollTo(0,0);
         }
-
         function bookNow() {
             const s = document.getElementById('svc').value, d = document.getElementById('dateS').value, n = document.getElementById('nameS').value, p = document.getElementById('phoneS').value;
             if(!d || !n || !p) return alert("Please fill all fields.");
